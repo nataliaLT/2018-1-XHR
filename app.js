@@ -1,3 +1,4 @@
+let dogeResponse;
 
 function downloadShibe(){
     const cargando = document.getElementById("carga");
@@ -7,7 +8,7 @@ function downloadShibe(){
         if (this.readyState == 4 && this.status == 200) {
             cargando.style = "display: none;";
              //Todas las respuestas “200 y algo” serán respuestas satisfactorias
-            const dogeResponse = JSON.parse(this.responseText); //No usar funciones flechas cuando usamos this.  usar json punto stringify cuando tratemos con objetos 
+            dogeResponse = JSON.parse(this.responseText); //No usar funciones flechas cuando usamos this.  usar json punto stringify cuando tratemos con objetos 
             const dogeReceptorDiv = document.getElementById("dogeReceptor");
             for(let dogeIndex=0; dogeIndex < dogeResponse.length; dogeIndex++){
                 const dogeImg = document.createElement('img'); //Aquí "almaceno" las imágenes
